@@ -1,0 +1,29 @@
+@import "assets/styles/variables";
+
+.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: $width-xl;
+  padding: 0 $padding-xl;
+}
+
+@media screen and (max-width: $screen-desktop-lg) {
+  .container {
+    min-width: $width-lg;
+    padding: 0 $padding-lg;
+  }
+}
+
+@media screen and (max-width: $screen-desktop-sm) {
+  .container {
+    min-width: $width-md;
+    padding: 0 $padding-md;
+  }
+}
+
+@media screen and (max-width: $screen-tablet) {
+  .container {
+    min-width: $width-sm;
+    padding: 0 $padding-sm;
+  }
+}

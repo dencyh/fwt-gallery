@@ -1,0 +1,23 @@
+@import "assets/styles/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0;
+}
+
+.logo {
+  color: $logo-gray;
+}
+
+.theme_btn {
+  padding: 5px;
+  color: $color;
+  height: fit-content;
+  background: none;
+  border: none;
+}
+
+.theme_btn > * {
+  color: $color;
+}

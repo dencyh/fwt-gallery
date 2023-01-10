@@ -1,0 +1,104 @@
+@import "assets/styles/variables";
+
+@include placeholder-shimmer;
+
+.container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  position: relative;
+  height: fit-content;
+  border-radius: $rounded-lg;
+  overflow: hidden;
+}
+
+.details {
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  padding: 5px 15px;
+  bottom: 0;
+  left: 0;
+
+  background-color: $transparent-white-75;
+
+  transition: height 300ms ease-in-out;
+  &:hover {
+    height: 145px;
+  }
+}
+
+.details__painting_name {
+  font-size: 18px;
+  color: $black;
+  margin-bottom: 6px;
+}
+
+.details__info {
+  font-size: 13px;
+}
+
+.details__item {
+  display: flex;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.details__title {
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.details__value {
+  font-weight: 300;
+}
+
+.img_wrapper {
+  position: relative;
+  background-color: $dimmed-white;
+
+  padding-top: 275/360 * 100%;
+
+  animation: placeholder-shimmer 1.2s linear infinite alternate;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: $screen-desktop-lg) {
+  .img_wrapper {
+    padding-top: 230/300 * 100%;
+  }
+}
+
+@media screen and (max-width: $screen-desktop-sm) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .img_wrapper {
+    padding-top: 249/340 * 100%;
+  }
+}
+
+@media screen and (max-width: $screen-tablet) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .img_wrapper {
+    padding-top: 205/280 * 100%;
+  }
+}

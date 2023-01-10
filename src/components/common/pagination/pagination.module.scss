@@ -1,0 +1,67 @@
+@import "assets/styles/variables";
+.container {
+  margin-top: 40px;
+  display: flex;
+}
+
+.item {
+  cursor: pointer;
+  height: 41px;
+  width: 41px;
+  border: 1px solid $pagination-color;
+  margin-right: -1px;
+
+  &:first-child {
+    border-top-left-radius: $rounded-md;
+    border-bottom-left-radius: $rounded-md;
+  }
+
+  &:last-child {
+    border-top-right-radius: $rounded-md;
+    border-bottom-right-radius: $rounded-md;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: inherit;
+  background-color: $pagination-background;
+  color: $pagination-color;
+
+  &:hover {
+    background-color: $pagination-hover;
+  }
+}
+
+.active {
+  background-color: $pagination-color;
+  color: $pagination-background;
+
+  &:hover {
+    background-color: $pagination-hover-active;
+    color: $pagination-background;
+  }
+}
+
+.disabled {
+  border-color: $transparent-black-30;
+}
+
+.chevron_flip {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: $screen-desktop-sm) {
+  .container {
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: $screen-tablet) {
+  .container {
+    margin-top: 30px;
+  }
+}

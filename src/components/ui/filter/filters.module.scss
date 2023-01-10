@@ -1,0 +1,19 @@
+@import "assets/styles/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.item {
+  width: 100%;
+}
+
+@media screen and (max-width: $screen-tablet) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
