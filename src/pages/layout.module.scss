@@ -2,14 +2,16 @@
 
 .container {
   box-sizing: content-box;
-  margin: 0 auto;
   max-width: $width-xl;
+  margin: 35px auto;
+  margin-bottom: 97px;
   padding: 0 $padding-xl;
 }
 
 @media screen and (max-width: $screen-desktop-lg) {
   .container {
     min-width: $width-lg;
+    margin-bottom: 62px;
     padding: 0 $padding-lg;
   }
 }
@@ -17,6 +19,7 @@
 @media screen and (max-width: $screen-desktop-sm) {
   .container {
     min-width: $width-md;
+    margin-bottom: 54px;
     padding: 0 $padding-md;
   }
 }
@@ -24,6 +27,7 @@
 @media screen and (max-width: $screen-tablet) {
   .container {
     min-width: $width-sm;
+    margin-bottom: 34px;
     padding: 0 $padding-sm;
   }
 }

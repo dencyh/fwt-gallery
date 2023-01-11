@@ -63,7 +63,7 @@
   position: relative;
   background-color: $dimmed-white;
 
-  padding-top: 275/360 * 100%;
+  padding-top: calc(275 / 360 * 100%);
 
   animation: placeholder-shimmer 1.2s linear infinite alternate;
 }
@@ -79,7 +79,7 @@
 
 @media screen and (max-width: $screen-desktop-lg) {
   .img_wrapper {
-    padding-top: 230/300 * 100%;
+    padding-top: calc(230 / 300 * 100%);
   }
 }
 
@@ -89,7 +89,7 @@
   }
 
   .img_wrapper {
-    padding-top: 249/340 * 100%;
+    padding-top: calc(249 / 340 * 100%);
   }
 }
 
@@ -99,6 +99,6 @@
   }
 
   .img_wrapper {
-    padding-top: 205/280 * 100%;
+    padding-top: calc(205 / 280 * 100%);
   }
 }
