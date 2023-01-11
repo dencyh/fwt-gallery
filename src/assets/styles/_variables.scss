@@ -14,6 +14,7 @@ $dimmed-white: #ededed;
 $white: #ffffff;
 $logo-gray: #4c4c4c;
 $black: #000000;
+$thumb-scroll: #7b7b7b;
 
 $rounded-md: 8px;
 $rounded-lg: 20px;
@@ -45,4 +46,10 @@ $screen-mobile: 320px;
       filter: brightness(92%);
     }
   }
+}
+
+@mixin input {
+  padding: 15px;
+  border-radius: $rounded-md;
+  border: 1px solid $color;
 }

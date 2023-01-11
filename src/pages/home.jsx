@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./layout";
-import FilterList from "../components/ui/filter/filterList";
+import FilterList from "../components/ui/filters/filterList";
 import GalleryList from "../components/ui/gallery/galleryList";
 import Pagination from "components/common/pagination/pagination";
 import { usePaintings } from "hooks/usePaintings";

@@ -8,7 +8,7 @@
 }
 
 .item {
-  width: 100%;
+  max-width: calc(25% - 20px);
 }
 
 @media screen and (max-width: $screen-tablet) {
