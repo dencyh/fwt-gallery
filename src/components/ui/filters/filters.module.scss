@@ -12,16 +12,6 @@
   width: calc(25% - 20px);
 }
 
-@media screen and (max-width: $screen-tablet) {
-  .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .item {
-    width: 100%;
-  }
-}
-
 .options {
   display: flex;
   flex-direction: column;
@@ -29,7 +19,7 @@
   font-size: 16px;
   font-weight: 500;
   max-height: 265px;
-  overflow-y: overlay;
+  overflow-y: auto;
 
   &::before {
     content: "";
@@ -124,6 +114,12 @@
 .test {
   background: red;
   color: red;
+}
+
+@supports (overflow-y: overlay) {
+  .options {
+    overflow-y: overlay;
+  }
 }
 
 @media screen and (max-width: $screen-desktop-lg) {
