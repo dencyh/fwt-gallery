@@ -5,7 +5,7 @@ import { usePaintings } from "./usePaintings";
 const initialFilters = {
   status: "idle",
   _page: 1,
-  _limit: 4,
+  _limit: 12,
   name: "",
   author: {},
   location: {},

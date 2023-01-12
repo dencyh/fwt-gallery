@@ -1,5 +1,5 @@
 import Dropdown from "components/common/dropdown/dropdown";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import FilterItem from "./filterItem";
 import styles from "./filters.module.scss";
 import Select from "./select";

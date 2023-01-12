@@ -14,10 +14,6 @@ export const PaintingsProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   getPaintings();
-  // }, []);
-
   useEffect(() => {
     if (error !== null) {
       setError(null);

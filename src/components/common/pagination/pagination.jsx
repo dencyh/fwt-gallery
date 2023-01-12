@@ -23,7 +23,6 @@ const Pagination = ({
   const [isLast, setIsLast] = useState(initialPage === totalPages);
 
   const populatePages = useCallback(() => {
-    console.log("populate");
     return Array(displayedCount)
       .fill(1)
       .map((_, index) => index + 1);
@@ -34,10 +33,6 @@ const Pagination = ({
   useEffect(() => {
     setPages(populatePages);
   }, [displayedCount]);
-
-  useEffect(() => {
-    console.log(pages);
-  }, [pages]);
 
   useEffect(() => {
     setPages(paginate({ pages, currentPage, totalPages, visiblePages }));
