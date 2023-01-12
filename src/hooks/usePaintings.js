@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { paintingsService } from "../services/paintings.service";
-import { paintings as apiPaintings } from "fakeApi/paintings";
 
 const PaintingsContext = React.createContext();
 
@@ -11,12 +10,12 @@ export const usePaintings = () => {
 
 export const PaintingsProvider = ({ children }) => {
   const [paintings, setPaintings] = useState([]);
-  const [paintingsTotal, setPaintingsTotal] = useState(33);
+  const [paintingsTotal, setPaintingsTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setPaintings(apiPaintings);
+    getPaintings();
   }, []);
 
   useEffect(() => {
@@ -29,11 +28,14 @@ export const PaintingsProvider = ({ children }) => {
     setIsLoading(true);
     try {
       const response = await paintingsService.getPaintings();
-      setPaintingsTotal(response.headers.get("x-total-count"));
+
+      setPaintingsTotal(Number(response.headers.get("x-total-count")));
+      console.log(response);
       setPaintings(response.data);
-      setIsLoading(false);
     } catch (error) {
       setError(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 

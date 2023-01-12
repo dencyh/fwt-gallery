@@ -7,10 +7,13 @@ $pagination-background: var(--background-color);
 $pagination-hover: var(--pagination-hover);
 $pagination-hover-active: var(--pagination-hover-active);
 $transparent: var(--transparent);
+$input-bg: var(--input-bg);
 
 $transparent-white-75: #ffffffbf;
 $transparent-white-30: #ffffff4d;
+$transparent-black-30: #0000004d;
 $dimmed-white: #ededed;
+$gray: gray;
 $white: #ffffff;
 $logo-gray: #4c4c4c;
 $black: #000000;
@@ -40,10 +43,21 @@ $screen-mobile: 320px;
 @mixin placeholder-shimmer {
   @keyframes placeholder-shimmer {
     0% {
-      filter: brightness(102%);
+      background-color: $color;
     }
     100% {
-      filter: brightness(92%);
+      background-color: $transparent-white-75;
+    }
+  }
+}
+
+@mixin border-shimmer {
+  @keyframes border-shimmer {
+    0% {
+      border-color: $transparent;
+    }
+    100% {
+      border-color: $gray;
     }
   }
 }
@@ -51,5 +65,5 @@ $screen-mobile: 320px;
 @mixin input {
   padding: 15px;
   border-radius: $rounded-md;
-  border: 1px solid $color;
+  border: 1px solid $transparent;
 }

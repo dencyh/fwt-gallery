@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "./layout";
 import FilterList from "../components/ui/filters/filterList";
-import GalleryList from "../components/ui/gallery/galleryList";
+import Gallery from "../components/ui/gallery/gallery";
 import Pagination from "components/common/pagination/pagination";
 import { usePaintings } from "hooks/usePaintings";
-import { API } from "fakeApi/api";
 
 const Home = () => {
-  const { paintings, paintingsTotal } = usePaintings();
-  const [isLoading, setIsLoading] = useState(false);
-  const fetchPaintings = async (page) => {
-    setIsLoading(true);
-    try {
-      const data = await API.getPaintings();
-      setIsLoading(false);
-    } catch (e) {}
-  };
+  const { paintingsTotal, isLoading } = usePaintings();
+
   return (
     <Layout>
       <FilterList />
-      <GalleryList />
+      <Gallery />
       <Pagination
         itemsCount={paintingsTotal}
         pageSize={12}
         visiblePages={3}
         initialPage={1}
-        onPageChange={fetchPaintings}
+        // onPageChange={fetchPaintings}
+        onPageChange={() => console.log("page change")}
         isLoading={isLoading}
       />
     </Layout>

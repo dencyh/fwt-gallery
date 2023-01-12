@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./pagination.module.scss";
 import clsx from "clsx";
@@ -22,11 +22,17 @@ const Pagination = ({
   const [isFirst, setIsFirst] = useState(initialPage === 1);
   const [isLast, setIsLast] = useState(initialPage === totalPages);
 
-  const [pages, setPages] = useState(
-    Array(displayedCount)
+  const populatePages = useCallback(() => {
+    return Array(displayedCount)
       .fill(1)
-      .map((_, index) => index + 1)
-  );
+      .map((_, index) => index + 1);
+  }, [isLoading]);
+
+  const [pages, setPages] = useState(populatePages);
+
+  useEffect(() => {
+    setPages(populatePages);
+  }, [isLoading]);
 
   useEffect(() => {
     setPages(paginate({ pages, currentPage, totalPages, visiblePages }));

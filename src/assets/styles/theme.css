@@ -6,6 +6,7 @@ html[data-theme="light"] {
   --transparent: #0000004d;
   --pagination-hover: #ededed;
   --pagination-hover-active: #464646;
+  --input-bg: #efefef;
 }
 
 /* dark theme */
@@ -16,4 +17,5 @@ html[data-theme="dark"] {
   --transparent: #ffffff4d;
   --pagination-hover: #464646;
   --pagination-hover-active: #ededed;
+  --input-bg: #ffffff;
 }

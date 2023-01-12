@@ -1,0 +1,10 @@
+@import "assets/styles/variables";
+
+.input {
+  @include input;
+  outline: none;
+  width: 100%;
+  background-color: $bg-color;
+  color: $color;
+  border-color: $color;
+}
