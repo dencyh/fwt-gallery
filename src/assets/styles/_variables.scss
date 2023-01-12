@@ -36,9 +36,8 @@ $padding-md: 34px;
 $padding-sm: 20px;
 
 $screen-desktop-lg: 1365px;
-$screen-desktop-sm: 1024px;
-$screen-tablet: 768px;
-$screen-mobile: 320px;
+$screen-desktop-sm: 1023px;
+$screen-tablet: 767px;
 
 @mixin placeholder-shimmer {
   @keyframes placeholder-shimmer {
