@@ -11,9 +11,11 @@
 
 body {
   margin: 0;
+  overflow-y: overlay;
   background-color: $bg-color;
   color: $color;
   font-family: "Roboto", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

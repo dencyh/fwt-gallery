@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { usePaintings } from "./usePaintings";
+import { formatEquals } from "utils/formatEquals";
 
 const initialFilters = {
   status: "idle",
@@ -41,18 +42,8 @@ export const FiltersProvider = ({ children }) => {
   useEffect(() => {
     if (filters.status !== "idle") {
       // I suppose server uses localeCompare, so e.g. 500 > 1000
-      // Format gte
-      let gte = filters.created.from;
-      if (gte.length > 0) {
-        gte = Array(gte.length).fill(0).join("") + gte;
-      }
-      // Formate lte
-      let lte = filters.created.to;
-      if (lte.length > 4) {
-        lte = lte[0] !== "-" ? "9999" : "-9999";
-      } else if (0 < lte.length && lte.length < 4) {
-        lte = Array(lte.length).fill(0).join("") + lte;
-      }
+      const gte = formatEquals(filters.created.from);
+      const lte = formatEquals(filters.created.to);
 
       getPaintings({
         _page: filters._page,
