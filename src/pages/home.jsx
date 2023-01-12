@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "./layout";
 import FilterList from "../components/ui/filters/filterList";
 import Gallery from "../components/ui/gallery/gallery";
