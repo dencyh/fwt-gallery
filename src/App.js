@@ -1,3 +1,4 @@
+import { FiltersProvider } from "hooks/useFilters";
 import React from "react";
 import { AuthorsProvider } from "./hooks/useAuthors";
 import { LocationsProvider } from "./hooks/useLocations";
@@ -9,7 +10,9 @@ function App() {
     <PaintingsProvider>
       <AuthorsProvider>
         <LocationsProvider>
-          <Home />
+          <FiltersProvider>
+            <Home />
+          </FiltersProvider>
         </LocationsProvider>
       </AuthorsProvider>
     </PaintingsProvider>

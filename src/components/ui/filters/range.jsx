@@ -31,7 +31,7 @@ const Range = ({ name: rangeName, value: rangeValue, onChange }) => {
       />
       <div className={styles.range__dash}></div>
       <Input
-        placeholder="to"
+        placeholder="before"
         type="number"
         className={styles.range__input}
         onChange={handleRange}

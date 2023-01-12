@@ -14,6 +14,10 @@ export const LocationsProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    getLocations();
+  }, []);
+
+  useEffect(() => {
     if (error !== null) {
       setError(null);
     }

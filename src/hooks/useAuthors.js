@@ -14,6 +14,10 @@ export const AuthorsProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    getAuthors();
+  }, []);
+
+  useEffect(() => {
     if (error !== null) {
       setError(null);
     }

@@ -125,3 +125,27 @@
   background: red;
   color: red;
 }
+
+@media screen and (max-width: $screen-desktop-lg) {
+  .range {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .range__input {
+    max-width: 110px;
+  }
+}
+
+@media screen and (max-width: $screen-desktop-sm) {
+  .options__item {
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: $screen-tablet) {
+  .range {
+    flex-direction: row;
+    gap: 6px;
+  }
+}

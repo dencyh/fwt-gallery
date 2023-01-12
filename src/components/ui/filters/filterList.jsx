@@ -7,19 +7,10 @@ import Range from "./range";
 import Search from "./search";
 import { useAuthors } from "hooks/useAuthors";
 import { useLocations } from "hooks/useLocations";
-
-const initialValues = {
-  name: "abc",
-  author: {},
-  location: {},
-  created: {
-    from: "",
-    to: ""
-  }
-};
+import { useFilters } from "hooks/useFilters";
 
 const FilterList = () => {
-  const [values, setValues] = useState(initialValues);
+  const { filters, updateFilters, clearFilterByName } = useFilters();
 
   const { authors } = useAuthors();
   const { locations } = useLocations();
@@ -44,19 +35,8 @@ const FilterList = () => {
   );
 
   const handleChange = ({ name, value }) => {
-    setValues((prev) => ({ ...prev, [name]: value }));
+    updateFilters((prev) => ({ ...prev, [name]: value }));
   };
-
-  const onClear = (name) => {
-    return function () {
-      setValues((prev) => ({ ...prev, [name]: initialValues[name] }));
-    };
-  };
-
-  // TODO remove
-  // useEffect(() => {
-  //   console.log(values), [values];
-  // });
 
   return (
     <div className={styles.container}>
@@ -64,7 +44,7 @@ const FilterList = () => {
         <Search
           placeholder="Name"
           name="name"
-          value={values.name}
+          value={filters.name}
           onChange={handleChange}
         />
       </FilterItem>
@@ -72,8 +52,8 @@ const FilterList = () => {
       <FilterItem>
         <Dropdown
           placeholder="Author"
-          value={values.author.label}
-          onClear={onClear("author")}
+          value={filters.author.label}
+          onClear={clearFilterByName("author")}
         >
           <Select
             name="author"
@@ -86,8 +66,8 @@ const FilterList = () => {
       <FilterItem>
         <Dropdown
           placeholder="Location"
-          value={values.location.label}
-          onClear={onClear("location")}
+          value={filters.location.label}
+          onClear={clearFilterByName("location")}
         >
           <Select
             name="location"
@@ -100,7 +80,7 @@ const FilterList = () => {
       <FilterItem>
         <Dropdown placeholder="Created" persistOnSelect>
           <Range
-            value={values.created}
+            value={filters.created}
             name="created"
             onChange={handleChange}
           />

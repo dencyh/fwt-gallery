@@ -15,7 +15,7 @@ module.exports = {
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     semi: ["error", "always"],
     "multiline-ternary": "off",
-    "prefer-const": "error",
+    "prefer-const": "warn",
     "no-prototype-builtins": "warn",
     "no-undef": "error",
     "no-unused-vars": "warn"

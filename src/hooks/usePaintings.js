@@ -14,9 +14,9 @@ export const PaintingsProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    getPaintings();
-  }, []);
+  // useEffect(() => {
+  //   getPaintings();
+  // }, []);
 
   useEffect(() => {
     if (error !== null) {
@@ -24,13 +24,12 @@ export const PaintingsProvider = ({ children }) => {
     }
   }, [error]);
 
-  const getPaintings = async () => {
+  const getPaintings = async (payload) => {
     setIsLoading(true);
     try {
-      const response = await paintingsService.getPaintings();
+      const response = await paintingsService.getPaintings(payload);
 
-      setPaintingsTotal(Number(response.headers.get("x-total-count")));
-      console.log(response);
+      setPaintingsTotal(Number(response.headers.get("x-total-count")) || 0);
       setPaintings(response.data);
     } catch (error) {
       setError(error);
