@@ -140,6 +140,14 @@
 }
 
 @media screen and (max-width: $screen-tablet) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .item {
+    width: 100%;
+  }
+
   .range {
     flex-direction: row;
     gap: 6px;
